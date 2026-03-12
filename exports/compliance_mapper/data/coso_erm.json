@@ -1,0 +1,57 @@
+{
+  "framework": "COSO Enterprise Risk Management — Integrating with Strategy and Performance",
+  "version": "2017",
+  "source": "https://www.coso.org/guidance-on-ic",
+  "components": {
+    "governance_and_culture": {
+      "name": "Governance and Culture",
+      "description": "Governance sets the organization's tone, reinforcing the importance of, and establishing oversight responsibilities for, enterprise risk management. Culture pertains to ethical values, desired behaviors, and understanding of risk in the entity.",
+      "principles": {
+        "1": "Exercises Board Risk Oversight — The board of directors provides oversight of the strategy and carries out governance responsibilities to support management in achieving strategy and business objectives.",
+        "2": "Establishes Operating Structures — The organization establishes operating structures in the pursuit of strategy and business objectives.",
+        "3": "Defines Desired Culture — The organization defines the desired behaviors that characterize the entity's desired culture.",
+        "4": "Demonstrates Commitment to Core Values — The organization demonstrates a commitment to the entity's core values.",
+        "5": "Attracts, Develops, and Retains Capable Individuals — The organization is committed to building human capital in alignment with the strategy and business objectives."
+      }
+    },
+    "strategy_and_objective_setting": {
+      "name": "Strategy and Objective-Setting",
+      "description": "Enterprise risk management, strategy, and objective-setting work together in the strategic-planning process. A risk appetite is established and aligned with strategy; business objectives put strategy into practice while serving as a basis for identifying, assessing, and responding to risk.",
+      "principles": {
+        "6": "Analyzes Business Context — The organization considers potential effects of business context on risk profile.",
+        "7": "Defines Risk Appetite — The organization defines risk appetite in the context of creating, preserving, and realizing value.",
+        "8": "Evaluates Alternative Strategies — The organization evaluates alternative strategies and potential impact on risk profile.",
+        "9": "Formulates Business Objectives — The organization considers risk while establishing the business objectives at various levels that align and support strategy."
+      }
+    },
+    "performance": {
+      "name": "Performance",
+      "description": "Risks that may impact the achievement of strategy and business objectives need to be identified and assessed. Risks are prioritized by severity in the context of risk appetite. The organization then selects risk responses and takes a portfolio view of the amount of risk it has assumed. The results of this process are reported to key risk stakeholders.",
+      "principles": {
+        "10": "Identifies Risk — The organization identifies risk that impacts the performance of strategy and business objectives.",
+        "11": "Assesses Severity of Risk — The organization assesses the severity of risk.",
+        "12": "Prioritizes Risks — The organization prioritizes risks as a basis for selecting responses to risks.",
+        "13": "Implements Risk Responses — The organization identifies and selects risk responses.",
+        "14": "Develops Portfolio View — The organization develops and evaluates a portfolio view of risk."
+      }
+    },
+    "review_and_revision": {
+      "name": "Review and Revision",
+      "description": "By reviewing entity performance, an organization can consider how well the enterprise risk management components are functioning over time and in light of substantial changes, and what revisions are needed.",
+      "principles": {
+        "15": "Assesses Substantial Change — The organization identifies and assesses changes that may substantially affect strategy and business objectives.",
+        "16": "Reviews Risk and Performance — The organization reviews entity performance and considers risk.",
+        "17": "Pursues Improvement in Enterprise Risk Management — The organization pursues improvement of enterprise risk management."
+      }
+    },
+    "information_communication_and_reporting": {
+      "name": "Information, Communication, and Reporting",
+      "description": "Enterprise risk management requires a continual process of obtaining and sharing necessary information, from both internal and external sources, which flows up, down, and across the organization.",
+      "principles": {
+        "18": "Leverages Information and Technology — The organization leverages the entity's information and technology systems to support enterprise risk management.",
+        "19": "Communicates Risk Information — The organization uses communication channels to support enterprise risk management.",
+        "20": "Reports on Risk, Culture, and Performance — The organization reports on risk, culture, and performance at multiple levels and across the entity."
+      }
+    }
+  }
+}

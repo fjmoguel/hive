@@ -1,0 +1,78 @@
+{
+  "audit_name": "Aden Hive Framework Security Audit",
+  "audit_date": "2026-03-12",
+  "findings": [
+    {
+      "id": "F-01",
+      "title": "Encryption Key Logged in Plaintext",
+      "severity": "Critical",
+      "description": "EncryptedFileStorage logs the raw Fernet master key in a warning message when generating a new key. The master decryption key for all stored credentials can appear in log files, CI output, or log aggregation systems.",
+      "file": "core/framework/credentials/storage.py",
+      "line": "158-159"
+    },
+    {
+      "id": "F-02",
+      "title": "HTTP API Has Zero Authentication",
+      "severity": "Critical",
+      "description": "The aiohttp server exposes credential CRUD, agent execution, and session management endpoints with no authentication middleware. CORS is localhost-only but does not prevent local process exploitation.",
+      "file": "core/framework/server/app.py",
+      "line": "168-233"
+    },
+    {
+      "id": "F-03",
+      "title": "LLM Debug Logs Store Secrets in Plaintext",
+      "severity": "High",
+      "description": "The LLM debug logger writes full system prompts, tool calls, and tool results to plaintext JSONL files. These may contain API keys, customer PII, and OAuth tokens with no encryption, access controls, or rotation.",
+      "file": "core/framework/runtime/llm_debug_logger.py",
+      "line": "32-72"
+    },
+    {
+      "id": "F-04",
+      "title": "safe_eval Allows DoS via Unbounded Power Operator",
+      "severity": "High",
+      "description": "The safe_eval function whitelists the power operator without exponent limits. Expression '10 ** 10 ** 10' freezes the graph executor. Edge conditions can originate from LLM-generated code.",
+      "file": "core/framework/graph/safe_eval.py",
+      "line": "12"
+    },
+    {
+      "id": "F-05",
+      "title": "SSRF in Web Scrape Tool",
+      "severity": "High",
+      "description": "The web_scrape tool accepts arbitrary URLs with no validation against internal network addresses. An agent can scrape localhost, cloud metadata endpoints (169.254.169.254), or any private IP range.",
+      "file": "tools/src/aden_tools/tools/web_scrape_tool/web_scrape_tool.py",
+      "line": "36-206"
+    },
+    {
+      "id": "F-06",
+      "title": "Credential Metadata Index Stored Unencrypted",
+      "severity": "Medium",
+      "description": "While credential values are Fernet-encrypted, the metadata index at metadata/index.json is stored as plaintext, revealing all integrated service names and timestamps.",
+      "file": "core/framework/credentials/storage.py",
+      "line": "227-287"
+    },
+    {
+      "id": "F-07",
+      "title": "Error Middleware Leaks Internal State",
+      "severity": "Medium",
+      "description": "The global error middleware returns raw exception messages (file paths, connection strings) directly to HTTP clients.",
+      "file": "core/framework/server/app.py",
+      "line": "141-145"
+    },
+    {
+      "id": "F-08",
+      "title": "Unbounded Cache Growth in ConcurrentStorage",
+      "severity": "Medium",
+      "description": "The in-memory cache has TTL checking on read but never evicts expired entries. Full Run objects accumulate indefinitely, leading to OOM in production.",
+      "file": "core/framework/storage/concurrent.py",
+      "line": "81"
+    },
+    {
+      "id": "F-09",
+      "title": "No Secret Redaction Layer in Logging",
+      "severity": "Low",
+      "description": "No centralized mechanism to prevent accidental credential logging. Zero results for sanitize/redact/mask patterns across the codebase.",
+      "file": "core/framework/ (multiple)",
+      "line": "N/A"
+    }
+  ]
+}
